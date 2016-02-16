@@ -1,0 +1,23 @@
+{
+  "name": "angular-testing-startkit",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Leonardo <leomicheloni@hotmail.com>"
+  ],
+  "license": "APACHE",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "jasmine-core": "jasmine#^2.4.1",
+    "angular-mocks": "^1.5.0"
+  }
+}
