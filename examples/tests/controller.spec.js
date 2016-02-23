@@ -30,11 +30,14 @@ describe("Loading a module", function(){
 	// the module function loads an angular module into the test
 	beforeEach(module("testapp1"));
 	
-	it("retriving values from module", inject(function(_consValue1_){
+	it("retrieving values from module", inject(function(_consValue1_){
 		expect(_consValue1_).toBe("hello world");		
 	}));
 
-	
+	it("retrieving a controller", inject(function($controller){
+		var controller = $controller("mainController");
+		
+	}));
 	
 });
 
