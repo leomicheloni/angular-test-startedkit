@@ -35,7 +35,21 @@ describe("Loading a module", function(){
 	}));
 
 	it("retrieving a controller", inject(function($controller){
-		var controller = $controller("mainController");
+		//if there's a controller without $scope we can just get it from the $controller service
+		var controller = $controller("mainControllerWithoutScope");		
+		expect(controller).not.toBe(null);
+	}));
+
+	it("retrieving a controller and scope", inject(function($controller, $rootScope){
+		var scope = $rootScope.$new;
+		
+		// if the controller needs a $scope we can provide it using $rootScope service
+		var controller = $controller("mainController",{
+			$scope: scope
+		});		
+		
+		//the contoller should loads the default value to the scope property
+		expect(scope.value1).toBe("i'm a value");
 		
 	}));
 	
