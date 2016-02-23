@@ -8,3 +8,12 @@ app.controller("mainController", function($scope){
 app.controller("mainControllerWithoutScope", function(){
 	
 });
+
+app.factory("service1", function(){
+	
+	return {
+		foo: function(){
+			return "the foo function called"
+		}
+	};
+});

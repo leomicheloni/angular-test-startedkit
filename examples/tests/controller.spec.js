@@ -34,6 +34,16 @@ describe("Loading a module", function () {
 			expect(_consValue1_).toBe("hello world");
 		}));
 
+	describe("services", function(){
+		it("calling a service", inject(function(_service1_){
+			
+			var value = _service1_.foo();
+			expect(value).toBe("the foo function called");
+			
+		}));
+		
+	});
+		
 	describe("controllers", function () {
 		it("retrieving a controller", inject(function ($controller) {
 				//if there's a controller without $scope we can just get it from the $controller service
@@ -70,6 +80,8 @@ describe("Loading a module", function () {
 				expect(scope.value1).not.toBe("i'm a value");
 				
 			}));
+			
+			
 			
 	});
 
