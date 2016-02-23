@@ -12,29 +12,36 @@ describe("Standard scenario", function(){
 		expect(person.age).toBe(0);
 	});
 
-	
-
 	describe("Sub scenario 1", function(){
-		// this test fails as the person object is initialized just in the parent scope
-		person.age++;
+		it("exceptions", function(){
+			
+			var shouldFail = function(){
+				throw new Error();
+			};
+			
+			expect(shouldFail).toThrowError();
+		});
+		
 	});
 	
 });
-describe("Scenario1", function(){
+describe("Loading a module", function(){
 	
-	// The code inside this function will be executed one time before each test
-	beforeEach(function(){
-		
-	});
+	// the module function loads an angular module into the test
+	beforeEach(module("testapp1"));
 	
-	it("should do something", function(){
-		
-	});
+	it("retriving values from module", inject(function(_consValue1_){
+		expect(_consValue1_).toBe("hello world");		
+	}));
 
 	
-	describe("Sub scenario 1", function(){
-		
-	
-	});
 	
 });
+
+
+
+
+
+
+
+
